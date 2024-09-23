@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 
 internal class FaceDetectorViewModel : ViewModel() {
 
-    private val _state = MutableSharedFlow<FaceDetectorViewState>(replay = 1)
+    private val _state = MutableSharedFlow<FaceDetectorViewState>()
 
     val state: StateFlow<FaceDetectorViewState> = _state
         .debounce(DEBOUNCE_TIMEOUT)
