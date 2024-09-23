@@ -19,7 +19,8 @@
                 android:name=".FaceDetectorActivity"
                 android:exported="true"
                 android:label="@string/app_name"
-                android:theme="@style/Theme.FaceDetector">
+                android:theme="@style/Theme.FaceDetector"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
