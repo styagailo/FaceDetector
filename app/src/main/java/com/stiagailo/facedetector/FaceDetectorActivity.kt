@@ -19,7 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.stiagailo.facedetector.ui.theme.FaceDetectorTheme
 
-class FaceDetectorActivity : ComponentActivity() {
+internal class FaceDetectorActivity : ComponentActivity() {
 
     private val cameraPermissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestPermission()

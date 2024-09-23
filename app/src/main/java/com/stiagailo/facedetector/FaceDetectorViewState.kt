@@ -1,10 +1,10 @@
 package com.stiagailo.facedetector
 
-data class FaceDetectorViewState(
+internal data class FaceDetectorViewState(
     val cameraType: CameraType,
 )
 
-enum class CameraType {
+internal enum class CameraType {
     FRONT,
     BACK;
 }

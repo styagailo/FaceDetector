@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class FaceDetectorViewModel : ViewModel() {
+internal class FaceDetectorViewModel : ViewModel() {
 
     private val _state = MutableSharedFlow<FaceDetectorViewState>(replay = 1)
 
