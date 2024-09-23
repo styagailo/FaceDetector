@@ -84,6 +84,7 @@ private fun getCameraController(
     context: Context,
     onAnalysisResult: (List<Face>?) -> Unit
 ): LifecycleCameraController {
+    val mainExecutor = ContextCompat.getMainExecutor(context)
     val faceDetectorOptions = FaceDetectorOptions.Builder()
         .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
         .setLandmarkMode(FaceDetectorOptions.LANDMARK_MODE_NONE)
@@ -94,7 +95,7 @@ private fun getCameraController(
     val analyzer = MlKitAnalyzer(
         listOf(faceDetector),
         ImageAnalysis.COORDINATE_SYSTEM_VIEW_REFERENCED,
-        ContextCompat.getMainExecutor(context)
+        mainExecutor,
     ) { result ->
         val faces = result.getValue(faceDetector)
         onAnalysisResult(faces)
@@ -102,7 +103,7 @@ private fun getCameraController(
 
     return LifecycleCameraController(context).apply {
         setImageAnalysisAnalyzer(
-            ContextCompat.getMainExecutor(context),
+            mainExecutor,
             analyzer
         )
     }
